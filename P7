@@ -1,0 +1,21 @@
+import java.lang.reflect.Field;
+
+public class ChangeConstant {
+
+    public static void main(String[] args) {
+        // Declare a constant
+        final int MAX_VALUE = 100;
+
+        // Get the Field object for the constant
+        Field field = MAX_VALUE.getClass().getDeclaredField("MAX_VALUE");
+
+        // Make the field accessible
+        field.setAccessible(true);
+
+        // Set the value of the constant
+        field.setInt(null, 200);
+
+        // Print the value of the constant
+        System.out.println(MAX_VALUE);
+    }
+}
