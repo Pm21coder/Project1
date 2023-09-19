@@ -1,0 +1,21 @@
+public class MinMax {
+
+    public static int min(int a, int b) {
+        return a + (a - b) * ((a - b) >> 31);
+    }
+
+    public static int max(int a, int b) {
+        return b + (b - a) * ((b - a) >> 31);
+    }
+
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 5;
+
+        int min = min(a, b);
+        int max = max(a, b);
+
+        System.out.println("The minimum of " + a + " and " + b + " is " + min);
+        System.out.println("The maximum of " + a + " and " + b + " is " + max);
+    }
+}
